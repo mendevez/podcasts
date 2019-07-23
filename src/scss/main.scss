@@ -1,0 +1,197 @@
+@import "config";
+
+@import "utilities";
+
+// General
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Titillium Web", sans-serif;
+  
+  
+}
+a {
+  text-decoration: none;
+  color: $light-color;
+}
+
+.spinner {
+  margin: 100px 0;
+  text-align: center;
+  
+}
+
+// Header
+#header {
+  background: $main-color;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+
+  .logo {
+    height: 150px;
+  }
+}
+
+// Navbar
+.nav-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+
+  .nav-link {
+    color: set-text-color($light-color);
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+}
+
+// Search Bar
+.search-box {
+  background: rgba(229, 229, 229, 0.5);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem 0;
+
+  .search-input {
+    border: 0.2rem solid $main-color;
+    border-radius: 0.5rem;
+    width: 80%;
+    padding: 0.8rem;
+
+    &:hover,
+    &:focus {
+      border-color: #6eaff0;
+    }
+  }
+
+  .search-button {
+    width: 15%;
+    padding: 1rem 0;
+    border: 0.2rem solid $main-color;
+    border-radius: 0.5rem;
+    background-color: $main-color;
+    color: set-text-color($main-color);
+    cursor: pointer;
+
+    &:hover {
+      border-color: #6eaff0;
+      background-color: #6eaff0;
+      color: set-text-color(#6eaff0);
+    }
+  }
+}
+
+// Popular podcasts
+.popular-podcast-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1rem;
+  text-align: center;
+  justify-content: center;
+
+  .popular-podcast-item {
+    color: set-text-color($light-color);
+    &:hover {
+      background: $medium-color;
+    }
+  }
+}
+
+// Episodes
+.episode-list {
+  display: flex;
+  justify-content: space-around;
+  color: $dark-color;
+  margin: 1rem 0;
+
+  &:hover {
+    background: $medium-color;
+    color: set-text-color($medium-color);
+  }
+  .episode-thumbnail {
+    flex: 1;
+  }
+
+  .episode-title-publisher {
+    flex: 3;
+  }
+}
+
+// Podcasts & Episode Details
+.podcast-episode-wrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  align-items: center;
+  justify-content: center;
+
+  .episode-link {
+    text-decoration: none;
+    color: $dark-color;
+    width: 100%;
+
+    &:hover {
+      background: $medium-color;
+    }
+  }
+
+  .list-title {
+    border-bottom: 3px solid $main-color;
+    width: 100%;
+  }
+}
+
+.podcast-list {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  justify-content: center;
+  .podcast-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: set-text-color($light-color);
+
+    &:hover {
+      background: $medium-color;
+    }
+    &-thumbnail {
+      height: 150px;
+      width: 150px;
+    }
+  }
+}
+
+// Footer
+#footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  background: $main-color;
+  justify-content: space-around;
+  align-items: center;
+
+  .footer-logo-wrapper {
+    align-items: center;
+    display: flex;
+    color: $light-color;
+    .footer-logo {
+      height: inherit;
+      width: 100px;
+    }
+  }
+
+  .api-logo {
+    height: inherit;
+    width: 250px;
+  }
+}
+
+@import "media";

@@ -1,0 +1,82 @@
+// Smartphones
+@media (max-width: 500px) {
+    #header {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .search-box {
+      flex-direction: column;
+  
+      .search-input {
+        width: 70%;
+      }
+      .search-button {
+        margin-top: 1rem;
+        width: 80%;
+      }
+    }
+  
+    .popular-podcast-list {
+      grid-template-columns: 1fr;
+    }
+  
+    .episode-list {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      .episode-title-publisher {
+        font-size: 1rem;
+      }
+    }
+  
+    .podcast-list {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  
+    .podcast-episode-wrapper {
+      .description {
+        display: none;
+      }
+      audio {
+        width: 100%;
+      }
+    }
+  
+    #footer {
+      flex-direction: column;
+    }
+  }
+  
+  // Tablets
+  @media (max-width: 768px) and (min-width: 500px) {
+    .popular-podcast-list {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  
+    .podcast-list {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    body {
+      height: 100vh;
+    }
+
+  }
+  
+  // Landscape
+  @media (max-height: 500px) {
+    .popular-podcast-list {
+      grid-template-columns: 1fr;
+    }
+  
+    .podcast-list {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  @media (max-height: 320px) {
+    .episode-list {
+      flex-direction: column;
+    }
+  }
+  

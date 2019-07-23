@@ -1,0 +1,54 @@
+.main-container {
+  min-height: 100vh; 
+  overflow: hidden;
+  display: block;
+  position: relative;
+  padding-bottom: 100px; 
+}
+
+
+.container {
+  max-width: $website-width;
+  margin: auto;
+
+
+  overflow: hidden;
+}
+
+.active {
+  border-bottom: solid 2px #2f558f;
+}
+
+.text-bold {
+  font-weight: bold;
+}
+
+.item-link {
+  text-decoration: none;
+}
+
+//   Padding
+.p {
+  &-1 {
+    padding: 1rem;
+  }
+  &-2 {
+    padding: 2rem;
+  }
+}
+
+//   Font
+.font-size {
+  &-s {
+    font-size: 0.5rem;
+  }
+  &-m {
+    font-size: 1rem;
+  }
+  &-l {
+    font-size: 1.5rem;
+  }
+  &-xl {
+    font-size: 2rem;
+  }
+}
