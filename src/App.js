@@ -16,13 +16,14 @@ class App extends Component {
         <div className= "main-container">
           <Header />
           <Navbar />
+          <Footer />
           <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/search" component={Search} />
             <Route path="/search/episodes/:id" component={EpisodeDetails} />
             <Route path="/search/podcasts/:id" component= {PodcastDetails} />
           </Switch>
-          <Footer />
+          
         </div>
       </BrowserRouter>
     );

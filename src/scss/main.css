@@ -197,7 +197,7 @@ a {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  padding: 1rem;
+  margin-bottom: 3rem;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -335,6 +335,9 @@ a {
   .podcast-list {
     -ms-grid-columns: (1fr)[2];
         grid-template-columns: repeat(2, 1fr);
+  }
+  .podcast-episode-wrapper .email {
+    display: none;
   }
   .podcast-episode-wrapper .description {
     display: none;

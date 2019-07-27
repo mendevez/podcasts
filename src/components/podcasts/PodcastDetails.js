@@ -24,16 +24,16 @@ const PodcastDetails = props => {
     });
 
   return (
-    <div>
+    <div className = "container">
       {loading ? (
         <div className="spinner">
           <Spinner type="ThreeDots" color="#2f558f " height="200" width="200" />
         </div>
       ) : (
-        <div className="container podcast-episode-wrapper">
+        <div className="podcast-episode-wrapper p-1">
           <img src={image} alt={title} />
           <h1>{title}</h1>
-          <h1>Email: {email}</h1>
+          <h1 className = "email">Email: {email}</h1>
           <h1 className="list-title">Episodes:</h1>
           {episode}
         </div>

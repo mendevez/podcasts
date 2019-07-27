@@ -5,10 +5,11 @@ import fetchPopular from "../hooks/FetchPopular";
 
 
 const Home = () => {
+
   const [podcasts, loading] = fetchPopular();
   
   return (
-    <div>{
+    <div className = "container">{
       loading ? (
         <div className = "spinner">
           <Spinner type = "ThreeDots" color="#2f558f " height="200" width="200" />

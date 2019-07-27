@@ -6,6 +6,7 @@ const FetchPopular = () => {
   const [podcasts, setPodcasts] = useState([]);
   const [loading, setLoading] = useState([]);
 
+
   useEffect(() => {
     let source = axios.CancelToken.source();
     const fetchPodcasts = async () => {
