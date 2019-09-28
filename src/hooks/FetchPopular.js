@@ -8,7 +8,10 @@ const FetchPopular = () => {
 
 
   useEffect(() => {
+    
     let source = axios.CancelToken.source();
+
+    // fetch popular podcasts
     const fetchPodcasts = async () => {
 
       try {
@@ -18,6 +21,8 @@ const FetchPopular = () => {
         setPodcasts(response.data.podcasts);
         setLoading(false);
       } catch (error) {
+
+        
         if (axios.isCancel(error)) {
           console.log("Cancelled due to another request");
         } else {
@@ -27,6 +32,7 @@ const FetchPopular = () => {
     };
     fetchPodcasts();
 
+    // Cancel request when component is unmounted
     return () => source.cancel();
   }, []);
 
