@@ -24,9 +24,9 @@ const Search = () => {
 
     // fetch episodes
     const episodes = await listennotes.get(
-      `/search?q=${searchTerm}&sort_by_date=1&type=episode&next_offset=1`
+      `/search?q=${searchTerm}&sort_by_date=1&type=episode`
     );
-    console.log(episodes)
+
     setEpisodes(episodes.data.results);
     setLoading(false);
   };
