@@ -1,12 +1,12 @@
 import React from "react";
 import Spinner from "react-loader-spinner";
 import { NavLink } from "react-router-dom";
-import fetchResources from "../../hooks/FetchResourcesId";
+import FetchPodcastById from "../../hooks/FetchPodcastById";
 
 const PodcastDetails = props => {
   const { id } = props.match.params;
   const type = "podcasts";
-  const [resource, loading] = fetchResources(type, id);
+  const [resource, loading] = FetchPodcastById(type, id);
   const { image, title, email, episodes } = resource;
 
   const episode =

@@ -2,20 +2,20 @@ import { useState, useEffect } from "react";
 import listennotes from "../api/listennotes";
 import axios from "axios";
 
-const FetchResources = (type, id) => {
-  const [resources, setResources] = useState([]);
+const FetchPodcastById = (type, id) => {
+  const [podcast, setPodcast] = useState([]);
   const [loading, setLoading] = useState([]);
 
   useEffect(() => {
     let source = axios.CancelToken.source();
 
     // Fetch podcasts and episodes
-    const fetchResource = async () => {
+    const fetchPodcast = async () => {
       try {
         const response = await listennotes.get(`/${type}/${id}`, {
           cancelToken: source.token
         });
-        setResources(response.data);
+        setPodcast(response.data);
         setLoading(false);
       } catch (error) {
         
@@ -26,13 +26,13 @@ const FetchResources = (type, id) => {
         }
       }
     };
-    fetchResource(type, id);
+    fetchPodcast(type, id);
 
     // Cancel request when component is unmounted
     return () => source.cancel();
   }, [type, id]);
 
-  return [resources, loading];
+  return [podcast, loading];
 };
 
-export default FetchResources;
+export default FetchPodcastById;

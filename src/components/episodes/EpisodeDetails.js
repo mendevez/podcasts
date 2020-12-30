@@ -1,12 +1,12 @@
 import React from "react";
 import Spinner from "react-loader-spinner";
-import fetchResources from "../../hooks/FetchResourcesId";
+import FetchPodcastById from "../../hooks/FetchPodcastById";
 
 const EpisodeDetails = props => {
   const { id } = props.match.params;
   const type = "episodes";
-  const [resource, loading] = fetchResources(type, id);
-  const { image, title, audio, description } = resource;
+  const [podcast, loading] = FetchPodcastById(type, id);
+  const { image, title, audio } = podcast;
 
   return (
     <div>
@@ -18,8 +18,6 @@ const EpisodeDetails = props => {
         <div className="container podcast-episode-wrapper">
           <img className="p-1" src={image} alt={title} />
           <h3 className="p-1">{title}</h3>
-          <p className="description p-1">{description.toString()}</p>
-
           <audio src={audio} controls />
         </div>
       )}
