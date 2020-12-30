@@ -16,9 +16,9 @@ const EpisodeDetails = props => {
         </div>
       ) : (
         <div className="container podcast-episode-wrapper">
-          <img className = "p-1"src={image} alt={title} />
-          <h3 className ="p-1">{title}</h3>
-          <p className = "description p-1">{description}</p>
+          <img className="p-1" src={image} alt={title} />
+          <h3 className="p-1">{title}</h3>
+          <p className="description p-1">{description.toString()}</p>
 
           <audio src={audio} controls />
         </div>

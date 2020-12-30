@@ -9,6 +9,7 @@ const FetchResources = (type, id) => {
   useEffect(() => {
     let source = axios.CancelToken.source();
 
+    // Fetch podcasts and episodes
     const fetchResource = async () => {
       try {
         const response = await listennotes.get(`/${type}/${id}`, {
@@ -17,6 +18,7 @@ const FetchResources = (type, id) => {
         setResources(response.data);
         setLoading(false);
       } catch (error) {
+        
         if (axios.isCancel(error)) {
           console.log("Cancelled due to another request");
         } else {
@@ -26,6 +28,7 @@ const FetchResources = (type, id) => {
     };
     fetchResource(type, id);
 
+    // Cancel request when component is unmounted
     return () => source.cancel();
   }, [type, id]);
 

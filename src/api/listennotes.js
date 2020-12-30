@@ -12,7 +12,7 @@ export default axios.create({
     }    
 
 })
-export const signal = axios.CancelToken.source();
+
 
 
 

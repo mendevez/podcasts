@@ -4,42 +4,36 @@ import listennotes from "../api/listennotes";
 import EpisodeList from "../components/episodes/EpisodeList";
 import PodcastList from "../components/podcasts/PodcastList";
 import Spinner from "react-loader-spinner";
-import axios from "axios";
 
 const Search = () => {
   const [podcasts, setPodcasts] = useState();
   const [episodes, setEpisodes] = useState();
   const [loading, setLoading] = useState(false);
 
-  const source = axios.CancelToken.source();
-
-
+  // Fetch podcasts and episodes matching the search term
   const getResources = async searchTerm => {
-    
+
+    // display spinner before fetching data 
     setLoading(true);
 
+    // fetch podcasts 
     const podcasts = await listennotes.get(
-      `/search?q=${searchTerm}&sort_by_date=1&type=podcast`,
-      {
-        cancelToken: source.token
-      }
+      `/search?q=${searchTerm}&sort_by_date=1&type=podcast`
     );
     setPodcasts(podcasts.data.results);
 
+    // fetch episodes
     const episodes = await listennotes.get(
-      `/search?q=${searchTerm}&sort_by_date=1&type=episode`,
-      {
-        cancelToken: source.token
-      }
+      `/search?q=${searchTerm}&sort_by_date=1&type=episode&next_offset=1`
     );
+    console.log(episodes)
     setEpisodes(episodes.data.results);
     setLoading(false);
-    
   };
 
   return (
     <div className="container">
-      <SearchBar getResources = {getResources} />
+      <SearchBar getResources={getResources} />
 
       {loading ? (
         <div className="spinner">

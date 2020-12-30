@@ -9,6 +9,7 @@ const Navbar = () => {
           <li>
             <NavLink exact={true} to = "/search" className = "nav-link p-1" > Search</NavLink>   
           </li>
+          
       </ul>
   )
 };
