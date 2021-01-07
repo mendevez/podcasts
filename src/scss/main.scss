@@ -1,6 +1,6 @@
-@import "config";
+@import 'config';
 
-@import "utilities";
+@import 'utilities';
 
 // General
 * {
@@ -9,19 +9,20 @@
 }
 
 body {
-  font-family: "Titillium Web", sans-serif;
-  
-  
+  font-family: 'Titillium Web', sans-serif;
 }
 a {
   text-decoration: none;
   color: $light-color;
 }
+button,
+input {
+  outline: none;
+}
 
 .spinner {
   margin: 100px 0;
   text-align: center;
-  
 }
 
 // Header
@@ -123,28 +124,40 @@ a {
   }
 }
 
-// Podcasts & Episode Details
-.podcast-episode-wrapper {
+.episode-details {
   display: flex;
   flex-direction: column;
-  margin-bottom: 3rem;
-  align-items: center;
   justify-content: center;
+  align-items: center;
 
-
-  .episode-link {
-    text-decoration: none;
-    color: $dark-color;
-    width: 100%;
-
-    &:hover {
-      background: $medium-color;
-    }
+  .episode-image {
+    margin: 1rem 0;
   }
+  .episode-title {
+    margin-bottom: 1rem;
+  }
+}
+.podcast-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
   .list-title {
-    border-bottom: 3px solid $main-color;
-    width: 100%;
+    padding: 0 1rem;
+  }
+  .podcast-episode-list {
+    display: flex;
+    flex-direction: column;
+    .podcast-episode-title {
+      color: $dark-color;
+      font-size: 1.5rem;
+      padding: 0.8rem 1rem;
+
+      &:hover {
+        background-color: $medium-color;
+      }
+    }
   }
 }
 
@@ -174,18 +187,21 @@ a {
   position: absolute;
   bottom: 0;
   width: 100%;
-  display: flex;
-  background: $main-color;
-  justify-content: space-around;
-  align-items: center;
 
-  .footer-logo-wrapper {
-    align-items: center;
+  background: $main-color;
+
+  .footer-content {
     display: flex;
-    color: $light-color;
-    .footer-logo {
-      height: inherit;
-      width: 100px;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1rem 0;
+    .footer-logo-wrapper {
+      align-items: center;
+      display: flex;
+      color: $light-color;
+      .footer-logo {
+        width: 100px;
+      }
     }
   }
 
@@ -195,4 +211,4 @@ a {
   }
 }
 
-@import "media";
+@import 'media';

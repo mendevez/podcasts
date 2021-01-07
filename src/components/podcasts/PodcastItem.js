@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 const PodcastItem = ({ podcast }) => {
   const { title_original, thumbnail } = podcast;
@@ -11,7 +11,7 @@ const PodcastItem = ({ podcast }) => {
         alt={title_original}
       />
 
-      <h1 className="podcast-item-title font-size-s ">{title_original}</h1>
+      <h1 className="podcast-item-title font-size-m ">{title_original}</h1>
     </div>
   );
 };

@@ -1,9 +1,9 @@
-import React, { useState } from "react";
-import SearchBar from "./SearchBar";
-import listennotes from "../api/listennotes";
-import EpisodeList from "../components/episodes/EpisodeList";
-import PodcastList from "../components/podcasts/PodcastList";
-import Spinner from "react-loader-spinner";
+import React, { useState } from 'react';
+import SearchBar from './SearchBar';
+import listennotes from '../api/listennotes';
+import EpisodeList from '../components/episodes/EpisodeList';
+import PodcastList from '../components/podcasts/PodcastList';
+import Spinner from 'react-loader-spinner';
 
 const Search = () => {
   const [podcasts, setPodcasts] = useState();
@@ -11,12 +11,11 @@ const Search = () => {
   const [loading, setLoading] = useState(false);
 
   // Fetch podcasts and episodes matching the search term
-  const getResources = async searchTerm => {
-
-    // display spinner before fetching data 
+  const getResources = async (searchTerm) => {
+    // display spinner before fetching data
     setLoading(true);
 
-    // fetch podcasts 
+    // fetch podcasts
     const podcasts = await listennotes.get(
       `/search?q=${searchTerm}&sort_by_date=1&type=podcast`
     );

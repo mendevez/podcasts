@@ -1,87 +1,91 @@
 // Smartphones
 @media (max-width: 500px) {
-    #header {
-      flex-direction: column;
-      align-items: center;
-    }
-  
-    .search-box {
-      flex-direction: column;
-  
-      .search-input {
-        font-size: .8rem;
-        width: 90%;
-      }
-      .search-button {
-        margin-top: 1rem;
-        width: 80%;
-      }
-    }
-  
-    .popular-podcast-list {
-      grid-template-columns: 1fr;
-    }
-  
-    .episode-list {
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      .episode-title-publisher {
-        font-size: 1rem;
-      }
-    }
-  
-    .podcast-list {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  
-    .podcast-episode-wrapper {
+  #header {
+    flex-direction: column;
+    align-items: center;
+  }
 
-      .email {
-        display: none;
-      }
-      .description {
-        display: none;
-      }
-      audio {
-        width: 100%;
-      }
-    }
-  
-    #footer {
-      flex-direction: column;
-    }
-  }
-  
-  // Tablets
-  @media (max-width: 768px) and (min-width: 500px) {
-    .popular-podcast-list {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  
-    .podcast-list {
-      grid-template-columns: repeat(3, 1fr);
-    }
-    body {
-      height: 100vh;
-    }
+  .search-box {
+    flex-direction: column;
 
-  }
-  
-  // Landscape
-  @media (max-height: 500px) {
-    .popular-podcast-list {
-      grid-template-columns: 1fr;
+    .search-input {
+      font-size: 0.9rem;
+      width: 90%;
     }
-  
-    .podcast-list {
-      grid-template-columns: repeat(3, 1fr);
+    .search-button {
+      margin-top: 1rem;
+      width: 80%;
     }
   }
-  
-  @media (max-height: 320px) {
-    .episode-list {
+
+  .popular-podcast-list {
+    grid-template-columns: 1fr;
+    margin-bottom: 5rem;
+  }
+
+  .episode-list {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 5rem;
+    .episode-title-publisher {
+      font-size: 1rem;
+    }
+  }
+
+  .podcast-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  #footer {
+    .footer-content {
       flex-direction: column;
+      padding-bottom: 3rem;
     }
   }
-  
+}
+
+// Tablets
+@media (max-width: 768px) and (min-width: 500px) {
+  .popular-podcast-list {
+    grid-template-columns: 1fr;
+  }
+
+  .podcast-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .episode-list {
+    flex-direction: column;
+  }
+  .search-box {
+    flex-direction: column;
+    .search-button {
+      margin-top: 1rem;
+      width: 80%;
+    }
+  }
+
+  #footer {
+    .footer-content {
+      flex-direction: column;
+      padding-bottom: 3rem;
+    }
+  }
+}
+
+// Landscape
+@media (max-height: 500px) {
+  .popular-podcast-list {
+    grid-template-columns: 1fr;
+  }
+
+  .podcast-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-height: 320px) {
+  .episode-list {
+    flex-direction: column;
+  }
+}

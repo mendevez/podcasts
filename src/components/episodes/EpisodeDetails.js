@@ -15,9 +15,9 @@ const EpisodeDetails = props => {
           <Spinner type="ThreeDots" color="#2f558f " height="200" width="200" />
         </div>
       ) : (
-        <div className="container podcast-episode-wrapper">
-          <img className="p-1" src={image} alt={title} />
-          <h3 className="p-1">{title}</h3>
+        <div className="episode-details">
+          <img className="episode-image" src={image} alt={title} />
+          <h3 className="episode-title">{title}</h3>
           <audio src={audio} controls />
         </div>
       )}
